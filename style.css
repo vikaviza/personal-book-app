@@ -99,6 +99,7 @@ body header .navWrapper nav {
   text-align: center;
 }
 body header .navWrapper nav button {
+  width: 100%;
   font-family: "Mynerve";
   margin-block: 0.5rem;
   font-size: 3.5em;
@@ -112,7 +113,15 @@ body header .navWrapper nav button #bookBlock {
   font-size: small;
   color: var(--dark);
   text-align: left;
-  margin-left: 1rem;
+  margin-inline: 2rem;
+}
+body header .navWrapper nav button #authorBlock {
+  display: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  color: var(--dark);
+  text-align: left;
+  margin-inline: 2rem;
 }
 
 /* HOVER*/

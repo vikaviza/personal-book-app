@@ -1,3 +1,11 @@
+
+let number = 0;
+// first array obj
+let book = '';
+let author = '';
+let priceloop = '';
+// Message
+
 // BOOKLIST
 const bookList = [
     'To Kill a Mockingbird',
@@ -17,6 +25,29 @@ const bookList = [
     'Of Mice and Men',
     'Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)'
 ]
+
+let bookArrayLength = bookList.length;
+// Items in array
+
+for (let i = 0; i < bookArrayLength; i++) {
+
+    number = (i + 1);
+
+    book += number + ': ';
+
+    book += bookList[i] + '<br><br>';
+
+}
+
+document.getElementById('bookBlock').innerHTML = book;
+    
+const booksBtn = document.getElementById('books')
+
+booksBtn.addEventListener("click", (e) =>{
+    e.preventDefault();
+    bookBlock.classList.toggle("display");
+})   
+
 // AUTHORS
 const authors = [
     'Harper Lee',
@@ -33,8 +64,31 @@ const authors = [
     'Gabriel García Márquez',
     'Aldous Huxley',
     'Margaret Mitchell',
-    'John Steinbeck'
+    'John Steinbeck',
+    'J.K. Rowling'
 ]
+
+let authorArrayLength = authors.length;
+// Items in array
+
+for (let i = 0; i < authorArrayLength; i++) {
+
+    number = (i + 1);
+
+    author += number + ': ';
+
+    author += authors[i] + '<br><br>';
+}
+
+document.getElementById('authorBlock').innerHTML = author;
+    
+const authorsBtn = document.getElementById('author')
+
+authorsBtn.addEventListener("click", (e) =>{
+    e.preventDefault();
+    authorBlock.classList.toggle("display");
+})  
+
 // PRICE
 const price = [
     30,
@@ -54,64 +108,13 @@ const price = [
     6.50
 ];
 
-// // function Book(bookList, authors, price) {
-// //     this.bookList = book;
-// //     this.authors = author;
-// //     this.price = price;
-// // }
 
-// // VARIABLES
-// const bookBlock = document.getElementById("bookBlock");
-// const authorBlock = document.getElementById("authorBlock");
-// const priceBlock = document.getElementById("priceBlock");
+const bookInfo = {
 
-// // const book = "<div>" + bookList + authors + price + '<i class="fa-solid fa-euro-sign"></i>' + "</div>";
-
-// // BOOKS
-// const bookBtn = document.getElementById('books');
-// const arrayLength = bookList.length;
-// const number = 0;
-// const msg = '';
-
-
-
-    // Count books
-
-    // for (let i = 0; i < arrayLength; i++) {
-    //     number = (i + 1);
-
-    //     msg += number + ': ';
-    //     msg += bookList[i] + '<br>';
-    //     bookBtn.addEventListener("click", function(){
-    //         console.log(i);
-    //         bookBlock.innerHTML = msg;
-    //     })
-    //     bookBlock.innerHTML = msg;
-    // }
-
-var arrayLength = bookList.length;
-// Items in array
-var number = 0;
-// Current round
-var books = '';
-// Message
-
-for (var i = 0; i < arrayLength; i++) {
-
-    number = (i + 1);
-
-    books += number + ': ';
-
-    books += bookList[i] + '<br><br>';
 }
 
-document.getElementById('bookBlock').innerHTML = books;
-    
-const booksBtn = document.getElementById('books')
 
-booksBtn.addEventListener("click", (e) =>{
-    e.preventDefault();
-    bookBlock.classList.toggle("display");
-})    
 
-    
+console.log(bookInfo);
+console.log(bookList);
+console.log(authors);
