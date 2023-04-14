@@ -1,0 +1,157 @@
+/* Variables */
+:root {
+    --price: #FC7300;
+    --accept: #5D9C59;
+    --decline: #DF2E38;
+    --light: #eee;
+    --grey: #888;
+    --dark: #313154;
+    --background: #E8DFCA;
+    --menu: #7149C6;
+}
+/* End of Variables */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    max-width: 540px;
+    background: var(--background);
+    
+    header {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        width: 100vw;
+        /*logoHead*/
+        .headBlock {
+            display: flex;
+            justify-content: space-around;
+            background: var(--background);
+            height: 7rem;
+            width: 100vw;
+            z-index: 9999;
+            .logoHead {
+                display: flex;
+                align-items: center;
+                font-size: 4em;
+                text-align: center;
+                padding-left: 20px;
+                margin-top: 0.2em;
+                cursor: default;
+    
+                /* Create a conic gradient. */
+                /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
+                background: #CA4246;
+                background-color: #CA4246;
+                background: conic-gradient(
+                    #A7489B 16.666%, 
+                    #476098 16.666%, 
+                    #476098 33.333%, 
+                    #8B9862 33.333%, 
+                    #F18F43 50%, 
+                    #F18F43 50%, 
+                    #8B9862 66.666%, 
+                    #476098 66.666%, 
+                    #476098 83.333%, 
+                    #A7489B 83.333%);
+                
+                /* Set thee background size and repeat properties. */
+                background-size: 57%;
+                background-repeat: repeat;
+                
+                /* Use the text as a mask for the background. */
+                /* This will show the gradient as a text color rather than element bg. */
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; 
+                
+                /* Animate the text when loading the element. */
+                /* This animates it on page load and when hovering out. */
+                animation: text-animation-rev 8s linear infinite;
+
+                /* Animation shown when entering the page and after the hover animation. */
+                @keyframes text-animation-rev {
+                    0% {
+                      background-size: 300%;
+                      background-position: -9em 1em;
+                    }
+                    20% {
+                      background-size: 57%;
+                      background-position: 0 1em;
+                    }
+                    100% {
+                      background-size: 57%;
+                      background-position: 0 0;
+                    }
+                }
+    
+                .bookw {
+                    font-family: 'Aguafina Script', cursive;
+                }
+    
+                .rentw {
+                    font-family: 'Mynerve', cursive;
+                }
+             
+            } /* End of logoHead*/
+    
+            .bars {
+                margin-top: 0.5em;
+                font-size: 3em;
+                color: var(--menu);
+                margin: 2rem 2rem 2rem 2rem;
+            }
+        }
+        
+
+        .navWrapper {
+            transition: transform 0.5s;
+            nav {
+                transform: translateY(-400px);
+                text-align: center;
+                button {
+                    font-family: 'Mynerve';
+                    margin-block: 0.5rem;
+                    font-size: 3.5em;
+                    border: 0;
+                    background: none;
+                    color: var(--grey);
+                    #bookBlock {
+                        display: none;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: small;
+                        color: var(--dark);
+                        text-align: left;
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+/* HOVER*/
+
+.bars:hover {
+    cursor: pointer;
+}
+
+li:hover {
+    cursor: pointer;
+    color: var(--dark) !important;
+}
+
+/* JS STYLE*/
+.translate {
+    transform: translateY(400px);
+}
+.display {
+    display: block !important;
+}
