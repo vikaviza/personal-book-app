@@ -1,13 +1,13 @@
 /* Variables */
 :root {
-  --price: #FC7300;
-  --accept: #5D9C59;
-  --decline: #DF2E38;
+  --price: #fc7300;
+  --accept: #5d9c59;
+  --decline: #df2e38;
   --light: #eee;
   --grey: #888;
   --dark: #313154;
-  --background: #E8DFCA;
-  --menu: #7149C6;
+  --background: #e8dfca;
+  --menu: #7149c6;
 }
 
 /* End of Variables */
@@ -50,9 +50,9 @@ body header .headBlock .logoHead {
   cursor: default;
   /* Create a conic gradient. */
   /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
-  background: #CA4246;
-  background-color: #CA4246;
-  background: conic-gradient(#A7489B 16.666%, #476098 16.666%, #476098 33.333%, #8B9862 33.333%, #F18F43 50%, #F18F43 50%, #8B9862 66.666%, #476098 66.666%, #476098 83.333%, #A7489B 83.333%);
+  background: #ca4246;
+  background-color: #ca4246;
+  background: conic-gradient(#a7489b 16.666%, #476098 16.666%, #476098 33.333%, #8b9862 33.333%, #f18f43 50%, #f18f43 50%, #8b9862 66.666%, #476098 66.666%, #476098 83.333%, #a7489b 83.333%);
   /* Set thee background size and repeat properties. */
   background-size: 57%;
   background-repeat: repeat;
@@ -98,7 +98,7 @@ body header .navWrapper nav {
   transform: translateY(-400px);
   text-align: center;
 }
-body header .navWrapper nav button {
+body header .navWrapper nav li {
   width: 100%;
   font-family: "Mynerve";
   margin-block: 0.5rem;
@@ -106,22 +106,24 @@ body header .navWrapper nav button {
   border: 0;
   background: none;
   color: var(--grey);
+  list-style: none;
 }
-body header .navWrapper nav button #bookBlock {
+body header .navWrapper nav li .sort {
   display: none;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: small;
+  font-size: 1.2rem;
   color: var(--dark);
   text-align: left;
   margin-inline: 2rem;
 }
-body header .navWrapper nav button #authorBlock {
-  display: none;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: small;
-  color: var(--dark);
-  text-align: left;
-  margin-inline: 2rem;
+body header .navWrapper nav li .sort .object {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body header .navWrapper nav li .sort .object .fa-square-plus {
+  font-size: 32px;
+  color: var(--menu);
 }
 
 /* HOVER*/
@@ -129,9 +131,13 @@ body header .navWrapper nav button #authorBlock {
   cursor: pointer;
 }
 
-li:hover {
+.btn:hover {
   cursor: pointer;
   color: var(--dark) !important;
+}
+
+.fa-square-plus {
+  cursor: pointer;
 }
 
 /* JS STYLE*/

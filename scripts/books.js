@@ -33,9 +33,9 @@ for (let i = 0; i < bookArrayLength; i++) {
 
     number = (i + 1);
 
-    book += number + ': ';
+    book += '<div class="object">' + number + ': ';
 
-    book += bookList[i] + '<br><br>';
+    book += bookList[i] + '<i class="fa-solid fa-square-plus"></i>' + '</div>' + '<br>';
 
 }
 
@@ -75,9 +75,9 @@ for (let i = 0; i < authorArrayLength; i++) {
 
     number = (i + 1);
 
-    author += number + ': ';
+    author += '<div class="object">' + number + ': ';
 
-    author += authors[i] + '<br><br>';
+    author +=  bookList[i] + '<i class="fa-solid fa-square-plus"></i>' + '</div>' + '<br>';
 }
 
 document.getElementById('authorBlock').innerHTML = author;
