@@ -111,29 +111,61 @@ body {
 
     .navWrapper {
       transition: transform 0.5s;
+      height: 0;
+      // padding-inline: 20px;
       nav {
-        transform: translateY(-400px);
-        text-align: center;
-        li {
-          width: 100%;
-          font-family: "Mynerve";
-          margin-block: 0.5rem;
-          font-size: 3.5em;
-          border: 0;
-          background: none;
-          color: var(--grey);
-          list-style: none;
-          .sort {
-            display: none;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1.2rem;
-            color: var(--dark);
-            text-align: left;
-            margin-inline: 2rem;
-            .object {
+        min-width: 33;
+        transform: translateY(-600px);
+        background: var(--background);
+        border: 2px solid #313154;
+        // text-align: center;
+        opacity: 0.9;
+        .bookForms {
+          width: 520px;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          align-items: flex-end;
+          .bookInput {
+            margin-block: 0.2rem;
+            label {
+              width: 100%;
+              font-family: "Aguafina Script", cursive;
+              margin-block: 0.5rem;
+              font-size: 1.5em;
+              border: 0;
+              background: none;
+              color: var(--grey);
+                }
+              }
+    
+              input {
+                font-family: "Mynerve";
+                font-size: 1.5em;
+                // color: var(--dark);
+                text-align: left;
+                margin-inline: 2rem;
+            }
+          }
+
+          .btnWrapper {
+            margin-block: 1.5rem;
+            // width: 100vw;
+            display: flex;
+            justify-content: center;
+            .addBtn {
+              width: 120px;
+              background-color: var(--accept);
+              color: var(--light);
+              border: 0;
+              border-radius: 5px;
+              font-family: "Mynerve", bold;
+              padding-block: 5px;
+              text-align: center;
               display: flex;
-              justify-content: space-between;
               align-items: center;
+              justify-content: space-around;
+              
               .fa-square-plus {
                 font-size: 32px;
                 color: var(--menu);
@@ -143,8 +175,48 @@ body {
         }
       }
     }
+
+  main {
+
+    .bookList {
+      width: 100vw;
+       display: flex;
+       flex-wrap: wrap;
+       margin: 1rem;
+      .card {
+        margin: 1rem;
+        border: 2px solid black;
+        width: 220px;
+        font-family: "Mynerve";
+        img {
+          width: 140px;
+          height: 190px;
+        }
+        .card-body {
+          margin: 10px;
+          .bookHeader {
+            margin-bottom: 10px;
+          }
+        }
+        li {
+          list-style: none;
+        }
+        h5 {
+          font-size: large;
+        }
+        .delete {
+          margin-top: 10px;
+          background: var(--decline);
+          border: 0;
+          color: var(--light);
+          padding: 10px;
+          border-radius: 5px;
+        }
+      }
+    }
   }
-}
+  
+  }
 
 /* HOVER*/
 
@@ -152,18 +224,18 @@ body {
   cursor: pointer;
 }
 
-.btn:hover {
+label:hover {
   cursor: pointer;
   color: var(--dark) !important;
 }
 
-.fa-square-plus {
+.addBtn {
   cursor: pointer;
 }
 
 /* JS STYLE*/
 .translate {
-  transform: translateY(400px);
+  transform: translateY(600px);
 }
 .display {
   display: block !important;

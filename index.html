@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <!-- Custom JS -->
     <script src="/scripts/bars.js" defer></script>
-    <script src="/scripts/books.js" defer></script>
+    <script src="/scripts/addBook.js" defer></script>
+    <!-- <script src="/scripts/books.js" defer></script> -->
     <!-- Custom CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Fonts -->
@@ -29,27 +30,42 @@
 
         <div class="navWrapper" id="nav">
             <nav>
-                <li id="books"><div class="btn">Books📖</div>
-                    <div class="sort" id="bookBlock">
-                        <!-- JS arr -->
+
+                  <div id="addBookInputs" class="bookForms">
+                    <div class="bookInput">
+                      <label for="bookName">Book name📖</label>
+                      <input type="text" id="bookName" class="bookName" />
                     </div>
-                </li>
-                <li id="author"><div class="btn">Author🧑</div>
-                    <div class="sort" id="authorBlock">
-                        <!-- JS arr -->
+                    <div class="bookInput">
+                      <label for="bookAuthor">Author🧑</label>
+                      <input type="text" id="bookAuthor" class="bookAuthor" />
                     </div>
-                </li>
-                <li id="price"><div class="btn">Price🪙</div>
-                    <div id="priceBlock">
-                        <!-- JS Search box-->
+                    <div class="bookInput">
+                      <label for="bookCategory">Category📚</label>
+                      <input type="text" id="bookCategory" class="bookCategory" />
                     </div>
-                </li>
+                    <div class="bookInput">
+                      <label for="bookReleaseYear">Year release📅</label>
+                      <input type="text" id="bookReleaseYear" class="bookReleaseYear" />
+                    </div>
+                    <div class="bookInput">
+                      <label for="bookPrice">Price🪙</label>
+                      <input type="text" id="bookPrice" class="bookPrice" />
+                    </div>
+                    <div class="bookInput">
+                      <label for="bookPicture">Book picture url:🖼️</label>
+                      <input type="text" id="bookPicture" class="bookPicture" />
+                    </div>
+                    <div class="btnWrapper">
+                        <button type="submit" id="submitNewBook" class="addBtn">ADD BOOK<i class="fa-solid fa-square-plus"></i></button>
+                    </div>
+                    
+                  </div>
             </nav>
         </div>
-        
     </header>
     <main>
-        
+        <div id="bookList" class="bookList"></div>
     </main>
 </body>
 </html>
