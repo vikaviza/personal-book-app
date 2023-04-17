@@ -93,37 +93,97 @@ body header .headBlock .bars {
 }
 body header .navWrapper {
   transition: transform 0.5s;
+  height: 0;
 }
 body header .navWrapper nav {
-  transform: translateY(-400px);
-  text-align: center;
+  min-width: 33;
+  transform: translateY(-600px);
+  background: var(--background);
+  border: 2px solid #313154;
+  opacity: 0.9;
 }
-body header .navWrapper nav li {
+body header .navWrapper nav .bookForms {
+  width: 520px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+}
+body header .navWrapper nav .bookForms .bookInput {
+  margin-block: 0.2rem;
+}
+body header .navWrapper nav .bookForms .bookInput label {
   width: 100%;
-  font-family: "Mynerve";
+  font-family: "Aguafina Script", cursive;
   margin-block: 0.5rem;
-  font-size: 3.5em;
+  font-size: 1.5em;
   border: 0;
   background: none;
   color: var(--grey);
-  list-style: none;
 }
-body header .navWrapper nav li .sort {
-  display: none;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  color: var(--dark);
+body header .navWrapper nav .bookForms input {
+  font-family: "Mynerve";
+  font-size: 1.5em;
   text-align: left;
   margin-inline: 2rem;
 }
-body header .navWrapper nav li .sort .object {
+body header .navWrapper nav .btnWrapper {
+  margin-block: 1.5rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
 }
-body header .navWrapper nav li .sort .object .fa-square-plus {
+body header .navWrapper nav .btnWrapper .addBtn {
+  width: 120px;
+  background-color: var(--accept);
+  color: var(--light);
+  border: 0;
+  border-radius: 5px;
+  font-family: "Mynerve", bold;
+  padding-block: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+body header .navWrapper nav .btnWrapper .addBtn .fa-square-plus {
   font-size: 32px;
   color: var(--menu);
+}
+body main .bookList {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+body main .bookList .card {
+  margin: 1rem;
+  border: 2px solid black;
+  width: 220px;
+  font-family: "Mynerve";
+}
+body main .bookList .card img {
+  width: 140px;
+  height: 190px;
+}
+body main .bookList .card .card-body {
+  margin: 10px;
+}
+body main .bookList .card .card-body .bookHeader {
+  margin-bottom: 10px;
+}
+body main .bookList .card li {
+  list-style: none;
+}
+body main .bookList .card h5 {
+  font-size: large;
+}
+body main .bookList .card .delete {
+  margin-top: 10px;
+  background: var(--decline);
+  border: 0;
+  color: var(--light);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /* HOVER*/
@@ -131,18 +191,18 @@ body header .navWrapper nav li .sort .object .fa-square-plus {
   cursor: pointer;
 }
 
-.btn:hover {
+label:hover {
   cursor: pointer;
   color: var(--dark) !important;
 }
 
-.fa-square-plus {
+.addBtn {
   cursor: pointer;
 }
 
 /* JS STYLE*/
 .translate {
-  transform: translateY(400px);
+  transform: translateY(600px);
 }
 
 .display {
