@@ -16,27 +16,30 @@ submitNewBook.addEventListener("click", (e) => {
   const bookPicture = document.getElementById("bookPicture");
 
   const book = {
-    KnygosPavadinimas: bookName.value,
-    KnygosAutorius: bookAuthor.value,
-    Kategorija: bookCategory.value,
-    IsleidimoMetai: bookReleaseYear.value,
-    Kaina: bookPrice.value,
+    name: bookName.value,
+    author: bookAuthor.value,
+    category: bookCategory.value,
+    releaseYear: bookReleaseYear.value,
+    price: bookPrice.value,
     url: bookPicture.value,
   };
+
+  let msg = document.getElementById("alertBox")
+  if (book.name, book.author, book.category, book.releaseYear, book.price, book.url == "") {
+    msg.innerHTML = `<h2 class="alert">PLEASE FILL ALL FIELDS<h2>`
+    return;
+  } else {
+    msg.style.display = "none";
+  }
+
   books = JSON.parse(localStorage.getItem("books")) || [];
   books.push(book);
   localStorage.setItem("books", JSON.stringify(books));
 
-  bookName.value = "";
-  bookAuthor.value = "";
-  bookCategory.value = "";
-  bookReleaseYear.value = "";
-  bookPrice.value = "";
-  bookPicture.value = "";
-
-  console.log("works");
   displayBooks();
 });
+
+
 
 function displayBooks(searchTerm) {
   const bookshelf = document.getElementById("bookList");
@@ -45,7 +48,7 @@ function displayBooks(searchTerm) {
   if (books) {
     const filteredBooks = searchTerm
       ? books.filter((book) =>
-          book.KnygosPavadinimas.toLowerCase().includes(
+          book.name.toLowerCase().includes(
             searchTerm.toLowerCase()
           )
         )
@@ -59,18 +62,18 @@ function displayBooks(searchTerm) {
           />
           <div class="card-body">
             <div class="bookHeader">
-            <h5 class="card-title">${filteredBooks[i].KnygosPavadinimas}</h5>
+            <h3 class="card-title">${filteredBooks[i].name}</h3>
             <p class="card-text">
-            ${filteredBooks[i].KnygosAutorius}
+            ${filteredBooks[i].author}
             </p>
           </div>  
           
           <ul class="list-group">
-            <li class="list-group-item">Category: <b> ${filteredBooks[i].Kategorija} </b></li>
-            <li class="list-group-item">Year: <b> ${filteredBooks[i].IsleidimoMetai} </b></li>
+            <li class="list-group-item">Category: <b> ${filteredBooks[i].category} </b></li>
+            <li class="list-group-item">Year: <b> ${filteredBooks[i].releaseYear} </b></li>
           </ul>
           <br>
-            <h5>${filteredBooks[i].Kaina}$</h5>
+            <h5>${filteredBooks[i].price}€</h5>
             <button class="delete" data-book-index="${i}">Delete</button>
         </div>
         `;
@@ -88,42 +91,3 @@ function displayBooks(searchTerm) {
     });
   });
 }
-
-// function createFilterMenu() {
-//   const books = JSON.parse(localStorage.getItem("books"));
-//   const filterMenu = document.getElementById("filterMenu");
-
-//   filterMenu.innerHTML = "";
-
-//   const allBooksOption = document.createElement("li");
-//   allBooksOption.innerHTML =
-//     '<button class="dropdown-item" type="button">All books</button>';
-//   filterMenu.appendChild(allBooksOption);
-
-//   const knygosAutoriai = new Set();
-//   for (let book of books) {
-//     knygosAutoriai.add(book.KnygosAutorius);
-//   }
-//   for (let knygosAutorius of knygosAutoriai) {
-//     const option = document.createElement("li");
-//     option.innerHTML = `<button class="dropdown-item" type="button">${knygosAutorius}</button>`;
-//     filterMenu.appendChild(option);
-//   }
-
-//   const filterButtons = filterMenu.querySelectorAll(".dropdown-item");
-//   filterButtons.forEach((button) => {
-//     button.addEventListener("click", (e) => {
-//       const filter = e.target.textContent;
-//       displayBooks(filter);
-//     });
-//   });
-// }
-
-// const searchBar = document.getElementById("searchBar");
-
-// searchBar.addEventListener("input", () => {
-//   const searchTerm = searchBar.value;
-//   displayBooks(searchTerm);
-// });
-// createFilterMenu();
-// displayBooks();
