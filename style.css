@@ -20,7 +20,6 @@
 
 /* BODY */
 body {
-  max-width: 540px;
   background: var(--background);
 }
 body header {
@@ -96,43 +95,51 @@ body header .navWrapper {
   height: 0;
 }
 body header .navWrapper nav {
-  min-width: 33;
+  width: 100vw;
+  min-width: 33px;
   transform: translateY(-600px);
   background: var(--background);
-  border: 2px solid #313154;
+  display: flex;
+  justify-content: center;
   opacity: 0.9;
 }
 body header .navWrapper nav .bookForms {
-  width: 520px;
+  width: 240px;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  align-items: flex-end;
 }
-body header .navWrapper nav .bookForms .bookInput {
+body header .navWrapper nav .bookForms .inp {
+  width: inherit;
   margin-block: 0.2rem;
+  font-size: 1.2em;
+  text-align: center;
 }
-body header .navWrapper nav .bookForms .bookInput label {
+body header .navWrapper nav .bookForms .inp label {
   width: 100%;
   font-family: "Aguafina Script", cursive;
   margin-block: 0.5rem;
-  font-size: 1.5em;
   border: 0;
   background: none;
   color: var(--grey);
 }
 body header .navWrapper nav .bookForms input {
   font-family: "Mynerve";
-  font-size: 1.5em;
   text-align: left;
   margin-inline: 2rem;
 }
-body header .navWrapper nav .btnWrapper {
+body header .navWrapper nav .bookForms .alert {
+  color: var(--decline);
+  font-family: "Mynerve";
+  text-align: center;
+  margin-top: 1.5rem;
+}
+body header .navWrapper nav .bookForms .btnWrapper {
   margin-block: 1.5rem;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
-body header .navWrapper nav .btnWrapper .addBtn {
+body header .navWrapper nav .bookForms .btnWrapper .addBtn {
   width: 120px;
   background-color: var(--accept);
   color: var(--light);
@@ -145,39 +152,160 @@ body header .navWrapper nav .btnWrapper .addBtn {
   align-items: center;
   justify-content: space-around;
 }
-body header .navWrapper nav .btnWrapper .addBtn .fa-square-plus {
+body header .navWrapper nav .bookForms .btnWrapper .addBtn .fa-square-plus {
   font-size: 32px;
   color: var(--menu);
 }
-body main .bookList {
+body main {
+  width: 100%;
+}
+body main .search-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+body main .filter-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-top: 1px solid var(--dark);
+  border-bottom: 1px solid var(--dark);
+  margin-bottom: 20px;
+  padding-top: 10px;
+}
+body main .filter-wrapper .desktopMenu {
+  width: 370px;
+  flex-direction: column;
+  margin-inline: 50px;
+}
+body main .filter-wrapper .desktopMenu .inp {
+  width: inherit;
+  margin-block: 0.2rem;
+  font-size: 1.2em;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main .filter-wrapper .desktopMenu .inp label {
+  width: 100%;
+  font-family: "Aguafina Script", cursive;
+  border: 0;
+  background: none;
+  color: var(--grey);
+}
+body main .filter-wrapper .desktopMenu input {
+  font-family: "Mynerve";
+  height: 1rem;
+  text-align: left;
+  margin-inline: 2rem;
+}
+body main .filter-wrapper .desktopMenu .alert {
+  color: var(--decline);
+  font-family: "Mynerve";
+  text-align: center;
+  margin-top: 1.5rem;
+}
+body main .filter-wrapper .desktopMenu .btnWrapper {
+  margin-block: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body main .filter-wrapper .desktopMenu .btnWrapper .addBtn {
+  width: 120px;
+  background-color: var(--accept);
+  color: var(--light);
+  border: 0;
+  border-radius: 5px;
+  font-family: "Mynerve", bold;
+  padding-block: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+body main .filter-wrapper .desktopMenu .btnWrapper .addBtn .fa-square-plus {
+  font-size: 32px;
+  color: var(--menu);
+}
+body main .filter-wrapper .hiddenForms {
+  display: none;
+}
+body main .filter-wrapper .filters {
+  font-family: "Mynerve";
+  text-align: center;
+}
+body main .filter-wrapper .filters .category {
+  list-style: none;
+}
+body main .filter-wrapper .filters .category h2 {
+  padding-block: 10px 15px;
+}
+body main .filter-wrapper .filters .category li {
+  cursor: pointer;
+  margin-block: 10px;
+  font-size: large;
+  font-weight: 400;
+}
+body main .filter-wrapper .filters .category .active {
+  color: var(--accept);
+  font-weight: 800;
+}
+body main .main-wrapper {
+  display: flex;
+}
+body main .main-wrapper .swipeMsg {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 3em;
+  font-family: "Aguafina Script", cursive;
+  -webkit-margin-end: 2rem;
+          margin-inline-end: 2rem;
+}
+body main .main-wrapper .swipeMsg .fa-arrow-down-long {
+  font-size: 70px;
+  margin-top: 1rem;
+  z-index: 0;
+}
+body main .main-wrapper .bookList {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  margin: 1rem;
 }
-body main .bookList .card {
+body main .main-wrapper .bookList .card {
   margin: 1rem;
-  border: 2px solid black;
-  width: 220px;
+  border: 1px inset var(--dark);
+  width: 240px;
   font-family: "Mynerve";
 }
-body main .bookList .card img {
+body main .main-wrapper .bookList .card img {
   width: 140px;
   height: 190px;
 }
-body main .bookList .card .card-body {
-  margin: 10px;
+body main .main-wrapper .bookList .card .card-body {
+  height: 260px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
-body main .bookList .card .card-body .bookHeader {
+body main .main-wrapper .bookList .card .card-body .bookHeader {
   margin-bottom: 10px;
 }
-body main .bookList .card li {
+body main .main-wrapper .bookList .card .card-body .bookHeader h3 {
+  -webkit-text-decoration: underline var(--dark);
+          text-decoration: underline var(--dark);
+}
+body main .main-wrapper .bookList .card li {
   list-style: none;
 }
-body main .bookList .card h5 {
+body main .main-wrapper .bookList .card h5 {
   font-size: large;
+  -webkit-text-decoration: underline var(--price);
+          text-decoration: underline var(--price);
 }
-body main .bookList .card .delete {
+body main .main-wrapper .bookList .card .delete {
   margin-top: 10px;
   background: var(--decline);
   border: 0;
@@ -196,6 +324,15 @@ label:hover {
   color: var(--dark) !important;
 }
 
+li:hover {
+  cursor: pointer;
+  color: var(--dark) !important;
+}
+
+.category:hover {
+  cursor: default;
+}
+
 .addBtn {
   cursor: pointer;
 }
@@ -207,4 +344,20 @@ label:hover {
 
 .display {
   display: block !important;
+}
+
+@media screen and (min-width: 621px) {
+  .bars {
+    display: none;
+  }
+  nav {
+    display: none !important;
+  }
+  .hiddenForms {
+    display: block !important;
+  }
+  .swipeMsg {
+    display: none;
+    width: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
