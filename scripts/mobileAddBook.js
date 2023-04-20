@@ -55,7 +55,7 @@ function displayBooks(searchTerm) {
       : books;
     for (let i = 0; i < filteredBooks.length; i++) {
       let cardHTML = `
-        <div class="card" id="card${i}">
+        <div data-filter="${filteredBooks[i].category}" class="card" id="card${i}">
           <img
             src="${filteredBooks[i].url}"
             alt="..."

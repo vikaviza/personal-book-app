@@ -12,6 +12,7 @@
     <script src="/scripts/mobileAddBook.js" defer></script>
     <script src="/scripts/desktopAddBook.js" defer></script>
     <script src="/scripts/search.js" defer></script>
+    
     <!-- <script src="/scripts/books.js" defer></script> -->
     <!-- Custom CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -22,14 +23,14 @@
 </head>
 <body>
     <header>
+      <!-- HEADBLOCK -->
         <div class="headBlock">
           <h1 class="logoHead"><div class="bookw">Book</div>&nbsp;<div class="rentw">list</div></h1>
           <div class="bars" id="burger">
               <i class="fa-solid fa-bars"></i>
           </div>
         </div>
-
-
+        <!-- NAV WRAPPER -->
         <div class="navWrapper" id="nav">
             <nav>
 
@@ -68,50 +69,71 @@
         </div>
     </header>
     <main>
+      <!-- SEARCH WRAPPER -->
       <div class="search-wrapper">
         <input type="search" id="search" autocomplete="off" placeholder="Search🔍">
       </div>
-      <!-- HIDDEN INPUTS THEN MOBILE -->
-      <div id="addBookInputs" class="bookForms hiddenForms desktopMenu">
-        <div class="inp">
-          <label for="bookName">Book name📖</label>
-          <input type="text" id="dskBookName" class="bookName" />
+      <!--  FILTER WRAPPER -->
+      <div class="filter-wrapper">
+
+        <!-- HIDDEN INPUTS THEN MOBILE -->
+        <div id="addBookInputs" class="bookForms hiddenForms desktopMenu">
+          <div class="inp">
+            <label for="bookName">Book name📖</label>
+            <input type="text" id="dskBookName" class="bookName" />
+          </div>
+          <div class="inp">
+            <label for="bookAuthor">Author🧑</label>
+            <input type="text" id="dskBookAuthor" class="bookAuthor" />
+          </div>
+          <div class="inp">
+            <label for="bookCategory">Category📚</label>
+            <input type="text" id="dskBookCategory" class="bookCategory" />
+          </div>
+          <div class="inp">
+            <label for="bookReleaseYear">Year release📅</label>
+            <input type="text" id="dskBookReleaseYear" class="bookReleaseYear" />
+          </div>
+          <div class="inp">
+            <label for="bookPrice">Price🪙</label>
+            <input type="text" id="dskBookPrice" class="bookPrice" />
+          </div>
+          <div class="inp">
+            <label for="bookPicture">Book picture url:🖼️</label>
+            <input type="text" id="dskBookPicture" class="bookPicture" />
+          </div>
+          <div id="dskalertBox"></div>
+          <div class="btnWrapper">
+              <button type="submit" id="dskSubmitNewBook" class="addBtn">ADD BOOK<i class="fa-solid fa-square-plus"></i></button>
+          </div>
+          
         </div>
-        <div class="inp">
-          <label for="bookAuthor">Author🧑</label>
-          <input type="text" id="dskBookAuthor" class="bookAuthor" />
+        <!-- FILTERS -->
+        <div class="filters">
+          <ul class="category">
+            <h2>Category📚</h2>
+            <li class="list" data-filter="all">All</li>
+            <li class="list" data-filter="classics">Classics</li>
+            <li class="list" data-filter="fantasy">Fantasy</li>
+            <li class="list" data-filter="history">History</li>
+            <li class="list" data-filter="comics">Comics</li>
+            <li class="list" data-filter="thriller">Thriller</li>
+          </ul>
         </div>
-        <div class="inp">
-          <label for="bookCategory">Category📚</label>
-          <input type="text" id="dskBookCategory" class="bookCategory" />
-        </div>
-        <div class="inp">
-          <label for="bookReleaseYear">Year release📅</label>
-          <input type="text" id="dskBookReleaseYear" class="bookReleaseYear" />
-        </div>
-        <div class="inp">
-          <label for="bookPrice">Price🪙</label>
-          <input type="text" id="dskBookPrice" class="bookPrice" />
-        </div>
-        <div class="inp">
-          <label for="bookPicture">Book picture url:🖼️</label>
-          <input type="text" id="dskBookPicture" class="bookPicture" />
-        </div>
-        <div id="dskalertBox"></div>
-        <div class="btnWrapper">
-            <button type="submit" id="dskSubmitNewBook" class="addBtn">ADD BOOK<i class="fa-solid fa-square-plus"></i></button>
-        </div>
-        
       </div>
+
+
 
       <div class="main-wrapper">
       
         <div id="bookList" class="bookList">
           <!-- JS -->
+          <div></div>
         </div>
-        <div class="swipeMsg">Swipe <br>down <br> <i class="fa-solid fa-arrow-down-long fa-fade"></i> </div>
+        <div class="swipeMsg">Swipe <br> <i class="fa-solid fa-arrow-down-long fa-flip"></i> </div>
       </div>
 
     </main>
+    <script src="/scripts/filter.js"></script>
 </body>
 </html>
