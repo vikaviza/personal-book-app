@@ -1,26 +1,25 @@
-const liItem = document.querySelectorAll("ul li");
-const bookItem = document.getElementsByClassName("card");
-// const arr = Array(bookItem)
-// console.log(liItem)
-// console.log(bookItem)
-console.log(bookItem)
+const categoryTitle = document.getElementsByClassName('category-title');
+const allCategoryPosts = document.getElementsByClassName('all');
 
-liItem.forEach(li => {
-    li.onclick = function() {
-        // ACTIVE
-        liItem.forEach(li => {
-            li.className = "";
-        })
-        li.className = "active";
-            // FILTER
+console.log(allCategoryPosts)
+for(let i = 0; i < categoryTitle.length; i++){
+    categoryTitle[i].addEventListener('click', filterPosts.bind(this, categoryTitle[i]));
+}
 
-    const value = li.textContent;
-    
-    arr.forEach(div => {
-        div.style.display = "none";
-        if (div.getAttribute('data-filter') == value.toUpperCase()) {
-            div.style.display = 'block';
+function filterPosts(item){
+    changeActivePosition(item);
+    for(let i = 0; i < allCategoryPosts.length; i++){
+        if(allCategoryPosts[i].classList.contains(item.attributes.id.value)){
+            allCategoryPosts[i].style.display = "block";
+        } else {
+            allCategoryPosts[i].style.display = "none";
         }
-    })
     }
-});
+}
+
+function changeActivePosition(activeItem){
+    for(let i = 0; i < categoryTitle.length; i++){
+        categoryTitle[i].classList.remove('active');
+    }
+    activeItem.classList.add('active');
+};

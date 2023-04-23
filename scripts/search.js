@@ -14,5 +14,6 @@ function filterList(){
         else{
             item.style.display = 'none';
         }
+        console.log(item)
     })
 }

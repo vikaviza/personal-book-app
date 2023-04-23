@@ -12,6 +12,7 @@
     <script src="/scripts/mobileAddBook.js" defer></script>
     <script src="/scripts/desktopAddBook.js" defer></script>
     <script src="/scripts/search.js" defer></script>
+    <script src="/scripts/filter.js" defer></script>
     
     <!-- <script src="/scripts/books.js" defer></script> -->
     <!-- Custom CDN -->
@@ -49,11 +50,11 @@
                     </div>
                     <div class="inp">
                       <label for="bookReleaseYear">Year release📅</label>
-                      <input type="text" id="bookReleaseYear" class="bookReleaseYear" />
+                      <input type="number" id="bookReleaseYear" class="bookReleaseYear" />
                     </div>
                     <div class="inp">
                       <label for="bookPrice">Price🪙</label>
-                      <input type="text" id="bookPrice" class="bookPrice" />
+                      <input type="number" id="bookPrice" class="bookPrice" />
                     </div>
                     <div class="inp">
                       <label for="bookPicture">Book picture url:🖼️</label>
@@ -92,11 +93,11 @@
           </div>
           <div class="inp">
             <label for="bookReleaseYear">Year release📅</label>
-            <input type="text" id="dskBookReleaseYear" class="bookReleaseYear" />
+            <input type="number" id="dskBookReleaseYear" class="bookReleaseYear" />
           </div>
           <div class="inp">
             <label for="bookPrice">Price🪙</label>
-            <input type="text" id="dskBookPrice" class="bookPrice" />
+            <input type="number" id="dskBookPrice" class="bookPrice" />
           </div>
           <div class="inp">
             <label for="bookPicture">Book picture url:🖼️</label>
@@ -112,12 +113,12 @@
         <div class="filters">
           <ul class="category">
             <h2>Category📚</h2>
-            <li class="list" data-filter="all">All</li>
-            <li class="list" data-filter="classics">Classics</li>
-            <li class="list" data-filter="fantasy">Fantasy</li>
-            <li class="list" data-filter="history">History</li>
-            <li class="list" data-filter="comics">Comics</li>
-            <li class="list" data-filter="thriller">Thriller</li>
+            <li class="category-title active" id="all">All</li>
+            <li class="category-title" id="classics">Classics</li>
+            <li class="category-title" id="fantasy">Fantasy</li>
+            <li class="category-title" id="history">History</li>
+            <li class="category-title" id="comics">Comics</li>
+            <li class="category-title" id="thriller">Thriller</li>
           </ul>
         </div>
       </div>
@@ -134,6 +135,6 @@
       </div>
 
     </main>
-    <script src="/scripts/filter.js"></script>
+    
 </body>
 </html>
