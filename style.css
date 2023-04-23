@@ -197,6 +197,7 @@ body main .filter-wrapper .desktopMenu .inp label {
 body main .filter-wrapper .desktopMenu input {
   font-family: "Mynerve";
   height: 1rem;
+  width: 100%;
   text-align: left;
   margin-inline: 2rem;
 }
